@@ -300,7 +300,7 @@ input:hover {
     background-repeat: no-repeat;
     justify-content: center;
     height: 40%;
-    background-image: url(/assets/images/illustration-sign-up-mobile.svg);
+    background-image: url(images/illustration-sign-up-mobile.svg);
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
   }
