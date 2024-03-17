@@ -1,0 +1,341 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  --tomato: hsl(4, 100%, 67%);
+  --dark-slate-grey: hsl(234, 29%, 20%);
+  --charcoal-grey: hsl(235, 18%, 26%);
+  --grey: hsl(231, 7%, 60%);
+  --white: hsl(0, 0%, 100%);
+}
+
+.container {
+  overflow: hidden;
+  position: relative;
+  background-color: var(--charcoal-grey);
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#formContainer {
+  overflow: hidden;
+  visibility: visible;
+  opacity: 1;
+  z-index: 2;
+  /* position: absolute; */
+  background-color: var(--white);
+  width: 900px;
+  height: 541px;
+  padding: 20px;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  transition: opacity 0.5s ease-out;
+}
+
+.left-col {
+  padding: 30px 0px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+}
+
+.form-heading {
+  font-size: 55px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--dark-slate-grey);
+}
+
+.form-description {
+  /* color: var(--dark-slate-grey); */
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+li {
+  font-size: 17px;
+  padding: 0px 0px;
+  font-weight: 500;
+  list-style: none;
+  list-style-position: outside;
+}
+
+.form-list-item {
+  display: flex;
+  gap: 13px;
+  margin-bottom: 10px;
+}
+.form-list-item svg {
+  min-width: 20px;
+  min-height: 20px;
+}
+.input-lable {
+  margin-top: 20px;
+  padding: 0px 2px;
+  font-size: 12px;
+  font-weight: 600;
+  width: 100%;
+  /* height: 50px; */
+  display: flex;
+  justify-content: space-between;
+}
+
+#error {
+  color: var(--tomato);
+}
+
+.input-box {
+  margin-top: 7px;
+  width: 100%;
+}
+
+input {
+  width: 100%;
+  height: 50px;
+  border: 1px solid var(--grey);
+  background-color: white;
+  padding: 0px 15px;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+input:hover {
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.subscribe-btn {
+  width: 100%;
+}
+
+.subscribe-btn button {
+  width: 100%;
+  height: 50px;
+  border: none;
+  background-color: var(--dark-slate-grey);
+  color: var(--white);
+  padding: 0px 15px;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.subscribe-btn button:hover {
+  background-image: linear-gradient(to right, #ff537b, #ff6236);
+  cursor: pointer;
+  box-shadow: 0px 15px 20px 0px #ff623675;
+}
+
+.right-col {
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.right-col svg {
+  width: 340px;
+  height: 500px;
+}
+
+#thanksContainer {
+  visibility: hidden;
+  z-index: 1;
+  opacity: 0;
+  position: absolute;
+  background-color: var(--white);
+  width: 450px;
+  height: 470px;
+  padding: 0px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.651);
+  transition: opacity 0.5s ease-out;
+}
+
+.success-icon {
+  margin-bottom: 20px;
+}
+
+.thanksHeading {
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--dark-slate-grey);
+}
+
+.thanks-description {
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 35px;
+}
+
+#result-email {
+  font-weight: 700;
+}
+
+.dismiss-btn {
+  width: 100%;
+}
+
+.dismiss-btn button {
+  width: 100%;
+  height: 50px;
+  border: none;
+  background-color: var(--dark-slate-grey);
+  color: var(--white);
+  padding: 0px 15px;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.dismiss-btn button:hover {
+  background-image: linear-gradient(to right, #ff537b, #ff6236);
+  cursor: pointer;
+  box-shadow: 0px 15px 20px 0px #ff623675;
+}
+
+@media (max-width: 930px) {
+  .container {
+    padding: 30px;
+  }
+
+  #formContainer {
+    width: 700px;
+    height: 505px;
+    padding: 10px;
+    gap: 20px;
+  }
+
+  .left-col {
+    padding: 30px 0px 30px 20px;
+    gap: 10px;
+  }
+
+  .form-heading {
+    font-size: 40px;
+  }
+
+  .form-description {
+    font-size: 14px;
+  }
+
+  li {
+    font-size: 14px;
+  }
+
+  .form-list-item {
+    margin-bottom: 5px;
+  }
+
+  .right-col svg {
+    height: 483px;
+  }
+}
+
+@media (max-width: 740px) {
+  .container {
+    padding: 0;
+  }
+
+  #formContainer {
+    width: 100%;
+    min-height: 100vh;
+    padding: 0px;
+    border-radius: 0px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+  }
+
+  .left-col {
+    padding: 0px 30px;
+    justify-content: start;
+    height: 70%;
+  }
+
+  .form-description {
+    margin-bottom: 15px;
+  }
+
+  .input-box {
+    margin-bottom: 10px;
+  }
+
+  input {
+    padding: 0px 10px;
+  }
+
+  .subscribe-btn {
+    margin-bottom: 20px;
+  }
+
+  .subscribe-btn button {
+    padding: 0px 1px;
+  }
+
+  .right-col {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    justify-content: center;
+    height: 40%;
+    background-image: url(/assets/images/illustration-sign-up-mobile.svg);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+
+  .right-col svg {
+    visibility: hidden;
+  }
+
+  #thanksContainer {
+    width: 100%;
+    min-height: 100vh;
+    justify-content: start;
+    border-radius: 0px;
+  }
+
+  .success-icon {
+    margin-bottom: 40px;
+    margin-top: 80px;
+  }
+
+  .thanksHeading {
+    margin-bottom: 25px;
+  }
+
+  .thanks-description {
+    font-size: 18px;
+  }
+
+  .dismiss-btn {
+    width: 77%;
+    height: 10%;
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: 20px;
+    padding-top: 0px;
+  }
+
+}
